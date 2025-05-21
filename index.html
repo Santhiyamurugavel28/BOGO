@@ -255,7 +255,7 @@ min-height: 100vh;
     </div>
 
     <div class="free-delivery">Free Delivery</div>
-    <div class="total">Total : $18.00 USD</div>
+    <div class="total" id="total">Total : $10.00 USD</div>
 
     <button class="add-to-cart">+ Add to Cart</button>
 
@@ -279,13 +279,15 @@ $(document).ready(function(){
   if (selectedId === 'radiobutton1') {
     $('#sector1').show();
     $("#option1").attr("class", "option popular");
+    $('#total').html("Total : $10.00 USD");
   } else if (selectedId === 'radiobutton2') {
     $('#sector2').show();
     $("#option2").attr("class", "option popular");
+    $('#total').html("Total : $18.00 USD"); 
   } else if (selectedId === 'radiobutton3') {
     $('#sector3').show();
     $("#option3").attr("class", "option popular");
-
+    $('#total').html("Total : $24.00 USD");
   }
 });
 
