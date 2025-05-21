@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <title>BOGO Offer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: white;
+      margin: 0;
+      background-size: cover;
+min-height: 100vh;
+      display: flex;
+       align-items: center;
+      justify-content: center;
+    }
+    .container {
+      width: 360px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #D7445B;
+      font-weight: bold;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+       justify-content: space-between;
+   }
+    .option {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 6px;
+      position: relative;
+    }
+    .option input[type="radio"] {
+      margin-right: 10px;
+    }
+    .discount-tag {
+      background: #D7445B;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 10px;
+    }
+    .price {
+      font-weight: bold;
+      float: right;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: #aaa;
+      font-size: 12px;
+    }
+    .option.popular {
+      border: 2px solid #ff4081;
+      background: #fff0f5;
+    }
+    .most-popular {
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      background: #D7445B;
+      color: white;
+      font-size: 10px;
+      padding: 3px 6px;
+      border-radius: 10px;
+    }
+    .selectors {
+      margin-top: 10px;
+      width:200px;
+      display:hide;
+    }
+    .selectors select {
+      margin: 5px 0;
+      width: 38%;
+      padding: 5px;
+    }
+.onetwo {
+  width: 10px;
+  height: 11px;
+    padding-top: 10px;
+}
+   .sizeselect{
+       margin-left: 30px;
+       color:#000000;
+   }
+   .colorselect{
+       margin-left: 62px;
+   }
+   .free-delivery {
+      color: #ff4081;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .total {
+      text-align: right;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .add-to-cart {
+      background: #D7445B;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .footer {
+      font-size: 12px;
+      text-align: right;
+      color: #aaa;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>YAY! It's BOGO</h2>
+
+    <div class="option" id="option1">
+      <label>
+        <input type="radio" id="radiobutton1" name="unit" checked> 1 Unit
+        <span class="discount-tag">10% Off</span>
+        <span class="price">$10.00 USD<br><span class="old-price">$24.00 USD</span></span>
+      </label>
+      <div class="selectors" id="sector1">
+        <span class='sizeselect'>Size</span>
+        <span class='colorselect'>Colour</span>
+        <div class='row'>
+          <span class='onetwo'>1#</span>
+          <select >
+            <option>S</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Colour</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+        </div>
+        <div class='row'>
+        <span class='onetwo'>2#</span>
+          <select>
+            <option>S</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select >
+            <option>Colour</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="option"  id="option2">
+      <span class="most-popular">MOST POPULAR</span>
+      <label>
+        <input type="radio" id="radiobutton2" name="unit"> 2 Unit
+        <span class="discount-tag">20% Off</span>
+        <span class="price">$18.00 USD<br><span class="old-price">$24.00 USD</span></span>
+      </label>
+      
+      
+
+      <div class="selectors" id="sector2">
+        <span class='sizeselect'>Size</span>
+        <span class='colorselect'>Colour</span>
+        <div class='row'>
+          <span class='onetwo'>1#</span>
+          <select >
+            <option>S</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Colour</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+        </div>
+        <div class='row'>
+        <span class='onetwo'>2#</span>
+          <select>
+            <option>S</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select >
+            <option>Colour</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="option" id="option3">
+      <label>
+        <input type="radio" id="radiobutton3" name="unit"> 3 Unit
+        <span class="discount-tag">30% Off</span>
+        <span class="price">$24.00 USD<br><span class="old-price">$24.00 USD</span></span>
+      </label>
+      <div class="selectors" id="sector3">
+        <span class='sizeselect'>Size</span>
+        <span class='colorselect'>Colour</span>
+        <div class='row'>
+          <span class='onetwo'>1#</span>
+          <select >
+            <option>S</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select>
+            <option>Colour</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+        </div>
+        <div class='row'>
+        <span class='onetwo'>2#</span>
+          <select>
+            <option>S</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+          </select>
+          <select >
+            <option>Colour</option>
+            <option>Black</option>
+            <option>White</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="free-delivery">Free Delivery</div>
+    <div class="total">Total : $18.00 USD</div>
+
+    <button class="add-to-cart">+ Add to Cart</button>
+
+    <div class="footer">@ Powered by Pumper</div>
+  </div>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+   $('#sector2, #sector3').hide();
+   $("#option1").attr("class", "option popular");
+});
+ $('input[name="unit"]').on('change', function () {
+  const selectedId = $(this).attr('id');
+
+  // Hide all sectors first
+  $('#sector1, #sector2, #sector3').hide();
+  $("#option1,#option2,#option3").attr("class", "option");
+
+  // Show the selected one
+  if (selectedId === 'radiobutton1') {
+    $('#sector1').show();
+    $("#option1").attr("class", "option popular");
+  } else if (selectedId === 'radiobutton2') {
+    $('#sector2').show();
+    $("#option2").attr("class", "option popular");
+  } else if (selectedId === 'radiobutton3') {
+    $('#sector3').show();
+    $("#option3").attr("class", "option popular");
+
+  }
+});
+
+</script>
+
