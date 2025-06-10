@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>BOGO Offer</title>
   <style>
     body {
@@ -264,32 +263,51 @@ min-height: 100vh;
 </body>
 </html>
 <script>
-$(document).ready(function(){
-   $('#sector2, #sector3').hide();
-   $("#option1").attr("class", "option popular");
-});
- $('input[name="unit"]').on('change', function () {
-  const selectedId = $(this).attr('id');
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('sector2').style.display = 'none';
+            document.getElementById('sector3').style.display = 'none';
+            document.getElementById('option1').classList.add('popular');
+            updateTotal('radiobutton1');
+        });
 
-  // Hide all sectors first
-  $('#sector1, #sector2, #sector3').hide();
-  $("#option1,#option2,#option3").attr("class", "option");
+        const radioButtons = document.getElementsByName('unit');
+        for (let i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].addEventListener('change', function() {
+                const selectedId = this.id;
+                // Hide all sectors first
+                document.getElementById('sector1').style.display = 'none';
+                document.getElementById('sector2').style.display = 'none';
+                document.getElementById('sector3').style.display = 'none';
+                document.getElementById('option1').classList.remove('popular');
+                document.getElementById('option2').classList.remove('popular');
+                document.getElementById('option3').classList.remove('popular');
+                // Show the selected one
+                if (selectedId === 'radiobutton1') {
+                    document.getElementById('sector1').style.display = 'block';
+                    document.getElementById('option1').classList.add('popular');
+                    updateTotal('radiobutton1');
+                } else if (selectedId === 'radiobutton2') {
+                    document.getElementById('sector2').style.display = 'block';
+                    document.getElementById('option2').classList.add('popular');
+                    updateTotal('radiobutton2');
+                } else if (selectedId === 'radiobutton3') {
+                    document.getElementById('sector3').style.display = 'block';
+                    document.getElementById('option3').classList.add('popular');
+                    updateTotal('radiobutton3');
+                }
+            });
+        }
 
-  // Show the selected one
-  if (selectedId === 'radiobutton1') {
-    $('#sector1').show();
-    $("#option1").attr("class", "option popular");
-    $('#total').html("Total : $10.00 USD");
-  } else if (selectedId === 'radiobutton2') {
-    $('#sector2').show();
-    $("#option2").attr("class", "option popular");
-    $('#total').html("Total : $18.00 USD"); 
-  } else if (selectedId === 'radiobutton3') {
-    $('#sector3').show();
-    $("#option3").attr("class", "option popular");
-    $('#total').html("Total : $24.00 USD");
-  }
-});
+        function updateTotal(id) {
+            if (id === 'radiobutton1') {
+                document.getElementById('total').innerHTML = "Total : $10.00 USD";
+            } else if (id === 'radiobutton2') {
+                document.getElementById('total').innerHTML = "Total : $18.00 USD";
+            } else if (id === 'radiobutton3') {
+                document.getElementById('total').innerHTML = "Total : $24.00 USD";
+            }
+        }
+    </script>
 
-</script>
+
 
